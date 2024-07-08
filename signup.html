@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/bg.jpg') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+           
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            color: rgb(139, 24, 24);
+        }
+        #signupForm{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10; 
+            border: 1px solid rgba(255, 255, 255, 0.3); 
+        }
+        #signupForm input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+            color: rgb(139, 24, 24);
+            outline: none;
+        }
+        ::placeholder {
+            color: rgb(139, 24, 24);
+            opacity: 1; 
+        }
+        #signupForm button{
+            width: 100%;
+            padding: 10px;
+            background: rgb(139, 24, 24);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <input type="text" placeholder="Username" id="signupUsername" required>
+                <input type="email" placeholder="Email Address" id="signupEmail" required>
+                <input type="tel" placeholder="Phone Number" id="signupPhone" required>
+                <input type="password" placeholder="Password" id="signupPassword" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const signupForm = document.getElementById('signupForm');
+
+    signupForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const username = document.getElementById('signupUsername').value;
+        const email = document.getElementById('signupEmail').value;
+        const phone = document.getElementById('signupPhone').value;
+        const password = document.getElementById('signupPassword').value;
+
+        console.log('Username:', username);
+        console.log('Email:', email);
+        console.log('Phone:', phone);
+        console.log('Password:', password);
+        signupForm.reset();
+        alert('Sign up successful!');
+    });
+});
+
+    </script>
+</body>
+</html>
